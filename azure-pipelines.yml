@@ -5,7 +5,14 @@
 # DOES THIS TRIGGER A NEW BUILD TO RUN AUTO-MAGICALLY WHEN I COMMIT TO THE MAIN BRANCH??
 
 trigger:
-- main
+  branches:
+    include:
+      - main
+  paths:
+    exclude:
+      - docs/**
+      - scripts/utility/*
+      - README.md
 
 pool:
   vmImage: ubuntu-latest
